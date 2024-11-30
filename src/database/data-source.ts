@@ -1,5 +1,9 @@
 import { DataSource } from 'typeorm';
 import 'dotenv/config';
+import { Local } from '@modules/local/entities/Local';
+import { Event } from '@modules/event/entities/Event';
+import { Organizer } from '@modules/organizer/entities/Organizer';
+import { Participant } from '@modules/participant/entities/Participant';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
@@ -10,6 +14,6 @@ export const AppDataSource = new DataSource({
   database: 'curriculo_db',
   synchronize: false,
   logging: true,
-  entities: [],
+  entities: [Event, Local, Organizer, Participant],
   migrations: [process.env.MIGRATIONS_DB || './src/database/migrations/*ts'],
 });

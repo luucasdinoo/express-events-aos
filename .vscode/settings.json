@@ -1,9 +1,10 @@
 {
   "material-icon-theme.folders.associations": {
     "migrations": "constant",
-    "education": "app",
-    "experience": "app",
-    "personalData": "app",
+    "local": "app",
+    "event": "app",
+    "organizer": "app",
+    "participant": "app",
     "entities": "class",
     "dtos": "class",
     "useCases": "controller",
