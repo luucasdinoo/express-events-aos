@@ -1,6 +1,6 @@
-import { Local } from '@modules/local/entities/Local';
-import { Organizer } from '@modules/organizer/entities/Organizer';
-import { Participant } from '@modules/participant/entities/Participant';
+import { Local } from '@modules/events/local/entities/Local';
+import { Organizer } from '@modules/events/organizer/entities/Organizer';
+import { Participant } from '@modules/events/participant/entities/Participant';
 import {
   Column,
   Entity,

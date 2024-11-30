@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
 import 'dotenv/config';
-import { Local } from '@modules/local/entities/Local';
-import { Event } from '@modules/event/entities/Event';
-import { Organizer } from '@modules/organizer/entities/Organizer';
-import { Participant } from '@modules/participant/entities/Participant';
+import { Local } from '@modules/events/local/entities/Local';
+import { Event } from '@modules/events/event/entities/Event';
+import { Organizer } from '@modules/events/organizer/entities/Organizer';
+import { Participant } from '@modules/events/participant/entities/Participant';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',

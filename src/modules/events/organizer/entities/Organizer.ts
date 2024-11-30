@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Event } from '@modules/event/entities/Event';
+import { Event } from '@modules/events/event/entities/Event';
 
 @Entity()
 export class Organizer {

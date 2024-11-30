@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { Event } from '@modules/event/entities/Event';
+import { Event } from '@modules/events/event/entities/Event';
 
 @Entity()
 export class Local {
@@ -25,7 +25,7 @@ export class Local {
   address_zip: string;
 
   @Column()
-  capacity: number;
+  capcity: number;
 
   @OneToMany(() => Event, (event) => event.local)
   events: Event[];
