@@ -16,8 +16,15 @@ export class OrganizerRepository implements IOrganzierRepository {
     return await this.repository.save(organizer);
   }
 
+  async save(organizer: Organizer): Promise<void> {
+    await this.repository.save(organizer);
+  }
+
   async findById(id: number): Promise<Organizer> {
-    const organizer = await this.repository.findOneBy({ id });
+    const organizer = await this.repository.findOne({
+      where: { id },
+      relations: ['events'],
+    });
     return organizer;
   }
 }

@@ -4,6 +4,7 @@ import { Participant } from '@modules/events/participant/entities/Participant';
 import {
   Column,
   Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
@@ -21,16 +22,16 @@ export class Event {
   description: string;
 
   @Column({ type: 'timestamp' })
-  time: Date;
+  localDateTime: Date;
 
   @ManyToOne(() => Organizer, (organizer) => organizer.events, {
     onDelete: 'SET NULL',
   })
+  @JoinColumn({ name: 'organizer_id' })
   organizer: Organizer;
 
-  @ManyToOne(() => Local, (local) => local.events, {
-    onDelete: 'SET NULL',
-  })
+  @ManyToOne(() => Local, (local) => local.events, { onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'local_id' })
   local: Local;
 
   @OneToMany(() => Participant, (participant) => participant.event)

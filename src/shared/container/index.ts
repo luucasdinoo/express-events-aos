@@ -1,3 +1,5 @@
+import { EventRepository } from '@modules/events/event/repositories/EventRepository';
+import { IEventRepository } from '@modules/events/event/repositories/IEventRepisotory';
 import { ILocalRepository } from '@modules/events/local/repositories/ILocalRepository';
 import { LocalRepository } from '@modules/events/local/repositories/LocalRepository';
 import { IOrganzierRepository } from '@modules/events/organizer/repositories/IOrganizerRepository';
@@ -14,10 +16,10 @@ container.registerSingleton<ILocalRepository>(
   LocalRepository
 );
 
-// container.registerSingleton<IOrganzierRepository>(
-//   'EventRepository',
-//   OrganizerRepository
-// );
+container.registerSingleton<IEventRepository>(
+  'EventRepository',
+  EventRepository
+);
 
 // container.registerSingleton<IOrganzierRepository>(
 //   'ParticipantReposiroty',

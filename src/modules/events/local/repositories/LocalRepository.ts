@@ -15,7 +15,15 @@ export class LocalRepository implements ILocalRepository {
     const local = await this.repository.create(data);
     return await this.repository.save(local);
   }
+
+  async save(local: Local): Promise<void> {
+    await this.repository.save(local);
+  }
+
   async findById(id: number): Promise<Local> {
-    return await this.repository.findOneBy({ id });
+    return await this.repository.findOne({
+      where: { id },
+      relations: ['events'],
+    });
   }
 }
