@@ -4,6 +4,8 @@ import { ILocalRepository } from '@modules/events/local/repositories/ILocalRepos
 import { LocalRepository } from '@modules/events/local/repositories/LocalRepository';
 import { IOrganzierRepository } from '@modules/events/organizer/repositories/IOrganizerRepository';
 import { OrganizerRepository } from '@modules/events/organizer/repositories/OrganizerRepository';
+import { IParticipantRepository } from '@modules/events/participant/repositories/IParticipantRepository';
+import { ParticipantRepository } from '@modules/events/participant/repositories/ParticipantRepository';
 import { container } from 'tsyringe';
 
 container.registerSingleton<IOrganzierRepository>(
@@ -21,7 +23,7 @@ container.registerSingleton<IEventRepository>(
   EventRepository
 );
 
-// container.registerSingleton<IOrganzierRepository>(
-//   'ParticipantReposiroty',
-//   OrganizerRepository
-// );
+container.registerSingleton<IParticipantRepository>(
+  'ParticipantRepository',
+  ParticipantRepository
+);

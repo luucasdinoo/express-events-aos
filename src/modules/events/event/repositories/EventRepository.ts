@@ -23,7 +23,7 @@ export class EventRepository implements IEventRepository {
   async findById(id: number): Promise<Event> {
     return await this.repository.findOne({
       where: { id },
-      relations: ['organizer', 'local'],
+      relations: ['organizer', 'local', 'participants'],
     });
   }
 
@@ -33,7 +33,7 @@ export class EventRepository implements IEventRepository {
 
   async list(): Promise<Event[]> {
     return await this.repository.find({
-      relations: ['organizer', 'local'],
+      relations: ['organizer', 'local', 'participants'],
     });
   }
 }

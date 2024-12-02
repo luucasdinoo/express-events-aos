@@ -33,7 +33,7 @@ export class CreateParticipantTable1732990113037 implements MigrationInterface {
           {
             name: 'event_id',
             type: 'int',
-            isNullable: false,
+            isNullable: true,
           },
         ],
       })

@@ -1,4 +1,10 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Event } from '@modules/events/event/entities/Event';
 
 @Entity()
@@ -13,7 +19,9 @@ export class Participant {
   email: string;
 
   @ManyToOne(() => Event, (event) => event.participants, {
-    onDelete: 'CASCADE',
+    onDelete: 'SET NULL',
+    nullable: true,
   })
+  @JoinColumn({ name: 'event_id' })
   event: Event;
 }
