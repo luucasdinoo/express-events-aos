@@ -36,4 +36,20 @@ export class EventRepository implements IEventRepository {
       relations: ['organizer', 'local', 'participants'],
     });
   }
+
+  async findEventsByOrganizer(organizer_id: number): Promise<Event[]> {
+    const events = await this.repository.find({
+      where: { organizer: { id: organizer_id } },
+      relations: [],
+    });
+    return events;
+  }
+
+  async findEventsByLocal(local_id: number): Promise<Event[]> {
+    const events = await this.repository.find({
+      where: { local: { id: local_id } },
+      relations: [],
+    });
+    return events;
+  }
 }

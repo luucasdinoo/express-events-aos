@@ -58,12 +58,13 @@ export class ParticipantController {
     req: Request,
     res: Response
   ): Promise<Response> {
-    const { event_id } = req.body;
+    const { event_id } = req.params;
 
     const participantService = container.resolve(ParticipantService);
 
-    const participants =
-      await participantService.findParticipantsByEventId(event_id);
+    const participants = await participantService.findParticipantsByEventId(
+      Number(event_id)
+    );
 
     return res.status(200).json(participants);
   }

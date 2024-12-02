@@ -18,6 +18,14 @@ eventRoutes.get('/:id', async (req, res) => {
   eventController.findById(req, res);
 });
 
+eventRoutes.get('/findEventsByOrganizer/:organizer_id', async (req, res) => {
+  eventController.findEventsByOrganizer(req, res);
+});
+
+eventRoutes.get('/findEventsByLocal/:local_id', async (req, res) => {
+  eventController.findEventsByLocal(req, res);
+});
+
 eventRoutes.delete('/:id', async (req, res) => {
   eventController.delete(req, res);
 });

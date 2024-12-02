@@ -39,6 +39,34 @@ export class EventController {
     return res.status(200).json(event);
   }
 
+  public async findEventsByOrganizer(
+    req: Request,
+    res: Response
+  ): Promise<Response> {
+    const { organizer_id } = req.params;
+
+    const eventService = container.resolve(EventService);
+
+    const event = await eventService.findEventsByOrganizer(
+      Number(organizer_id)
+    );
+
+    return res.status(200).json(event);
+  }
+
+  public async findEventsByLocal(
+    req: Request,
+    res: Response
+  ): Promise<Response> {
+    const { local_id } = req.params;
+
+    const eventService = container.resolve(EventService);
+
+    const event = await eventService.findEventsByLocal(Number(local_id));
+
+    return res.status(200).json(event);
+  }
+
   public async delete(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 

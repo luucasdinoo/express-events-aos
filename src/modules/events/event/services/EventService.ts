@@ -49,6 +49,14 @@ export class EventService {
     return await this.eventRepository.findById(id);
   }
 
+  async findEventsByOrganizer(organizer_id: number) {
+    return await this.eventRepository.findEventsByOrganizer(organizer_id);
+  }
+
+  async findEventsByLocal(local_id: number) {
+    return await this.eventRepository.findEventsByLocal(local_id);
+  }
+
   async delete(id: number): Promise<void> {
     await this.eventRepository.delete(id);
   }

@@ -41,7 +41,6 @@ export class ParticipantRepository implements IParticipantRepository {
   async findParticipantsByEventId(event_id: number): Promise<Participant[]> {
     const participants = await this.repository.find({
       where: { event: { id: event_id } },
-      relations: ['event'],
     });
     return participants;
   }

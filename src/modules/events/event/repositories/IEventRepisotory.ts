@@ -6,5 +6,7 @@ export interface IEventRepository {
   save(event: Event);
   findById(id: number): Promise<Event>;
   list(): Promise<Event[]>;
+  findEventsByOrganizer(organizer_id): Promise<Event[]>;
+  findEventsByLocal(local_id): Promise<Event[]>;
   delete(id: number): Promise<void>;
 }
