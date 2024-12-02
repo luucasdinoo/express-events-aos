@@ -5,7 +5,7 @@ import './shared/container';
 import Express from 'express';
 import { AppDataSource } from '@database/data-source';
 import cors from 'cors';
-import { routes } from 'routes';
+import { routes } from './routes';
 
 const app = Express();
 const PORT = process.env.PORT || 8080;
