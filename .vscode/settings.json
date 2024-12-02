@@ -5,6 +5,7 @@
     "event": "app",
     "organizer": "app",
     "participant": "app",
+    "ticket": "app",
     "entities": "class",
     "dtos": "class",
     "useCases": "controller",

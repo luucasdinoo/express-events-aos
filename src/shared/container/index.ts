@@ -6,6 +6,8 @@ import { IOrganzierRepository } from '@modules/events/organizer/repositories/IOr
 import { OrganizerRepository } from '@modules/events/organizer/repositories/OrganizerRepository';
 import { IParticipantRepository } from '@modules/events/participant/repositories/IParticipantRepository';
 import { ParticipantRepository } from '@modules/events/participant/repositories/ParticipantRepository';
+import { ITicketRepository } from '@modules/events/ticket/repositories/ITicketRepository';
+import { TicketRepository } from '@modules/events/ticket/repositories/TicketRepository';
 import { container } from 'tsyringe';
 
 container.registerSingleton<IOrganzierRepository>(
@@ -26,4 +28,9 @@ container.registerSingleton<IEventRepository>(
 container.registerSingleton<IParticipantRepository>(
   'ParticipantRepository',
   ParticipantRepository
+);
+
+container.registerSingleton<ITicketRepository>(
+  'TicketRepository',
+  TicketRepository
 );
