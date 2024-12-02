@@ -8,11 +8,7 @@ import { Ticket } from '@modules/events/ticket/entities/Ticket';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'docker',
-  password: 'docker',
-  database: 'curriculo_db',
+  url: process.env.URL_DB,
   synchronize: false,
   logging: true,
   entities: [Event, Local, Organizer, Participant, Ticket],
